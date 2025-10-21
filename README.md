@@ -9,3 +9,8 @@ Let's start with Customer Entity, Basic Endpoints
 | /api/customers/{customerId}	| PUT |	Update details of a specific customer. |	Customer details updated successfully |
 | /api/customers/{customerId}	| DELETE |	Delete a specific customer |	Customer deleted successfully |
 
+## Initial Endpoint Response 
+
+![alt text](markdown-images/image.png)
+
+![alt text](markdown-images/image-1.png)
