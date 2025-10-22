@@ -37,6 +37,6 @@ public class Customers {
     @Pattern(regexp = "^\\d{10}$", message = "Mobile number must have exactly 10 digits")
     private String customerPhone;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<DeliveryAddress> address;
 }

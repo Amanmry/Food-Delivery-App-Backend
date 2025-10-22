@@ -23,4 +23,8 @@ public class CustomerService {
     public Customers getCustomerById(Long customerId) throws Exception {
         return customerRepository.findById(customerId).orElseThrow(() -> new RuntimeException("Customer with Id :" + customerId + " not found!"));
     }
+
+    public void removeUserById(Long customerId) throws Exception {
+        customerRepository.deleteById(customerId);
+    }
 }

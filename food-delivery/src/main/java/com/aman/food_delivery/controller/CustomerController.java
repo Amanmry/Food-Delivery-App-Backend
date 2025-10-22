@@ -4,10 +4,7 @@ import com.aman.food_delivery.entity.Customers;
 import com.aman.food_delivery.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,16 @@ public class CustomerController {
         }
         catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{customerId}")
+    public ResponseEntity<String> removeUserById(@PathVariable("customerId") Long customerId) {
+        try {
+            customerService.removeUserById(customerId);
+            return new ResponseEntity<>("User with Id " + customerId + " deleted successfully", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("User not found!", HttpStatus.NOT_FOUND);
         }
     }
 }
